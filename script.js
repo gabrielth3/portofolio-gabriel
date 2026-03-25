@@ -35,22 +35,3 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
-
-/* ============================================================
-   SKILL BAR ANIMATION ON SCROLL
-============================================================ */
-const skillBars = document.querySelectorAll(".skill-bar");
-
-const barObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-        barObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
-
-skillBars.forEach((bar) => barObserver.observe(bar));
